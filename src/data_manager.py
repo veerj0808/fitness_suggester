@@ -1,14 +1,3 @@
-"""
-data_manager.py — dataset bootstrap, ML model training, and CSV logging.
-
-FIX vs. the original script: file paths were bare filenames
-('fitness_dataset.csv'), so the program only worked if you happened
-to run it from inside the folder that held the CSVs. Paths here are
-built from the project root, so `python3 main.py` works from any
-directory, and the dataset/logs live in clearly separate data/ and
-logs/ folders instead of the project root.
-"""
-
 import os
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
@@ -20,9 +9,8 @@ LOGS_DIR = os.path.join(PROJECT_ROOT, 'logs')
 DATA_FILE = os.path.join(DATA_DIR, 'fitness_dataset.csv')
 LOG_FILE = os.path.join(LOGS_DIR, 'user_recommendation_logs.csv')
 
-
 def initialize_dataset() -> None:
-    """Create a starter dataset if one doesn't exist yet."""
+    #Create a starter dataset if one doesn't exist yet.
     if os.path.exists(DATA_FILE):
         return
 
@@ -43,7 +31,6 @@ def initialize_dataset() -> None:
     pd.DataFrame(data).to_csv(DATA_FILE, index=False)
     print("All set! Let's get started.\n")
 
-
 def train_model():
     """Load the dataset and train a KNN classifier to predict workout type."""
     try:
@@ -59,7 +46,6 @@ def train_model():
         print(f"Oops! Something went wrong while loading the fitness model: {e}")
         return None
 
-
 def log_recommendation(age, weight, height_m, gender, goal, workout, diet_type, bmi) -> None:
     os.makedirs(LOGS_DIR, exist_ok=True)
 
@@ -73,10 +59,8 @@ def log_recommendation(age, weight, height_m, gender, goal, workout, diet_type, 
         'Recommended_Workout': [workout],
         'Diet_Focus': [diet_type],
     })
-
     write_header = not os.path.exists(LOG_FILE)
     entry.to_csv(LOG_FILE, mode='a', header=write_header, index=False)
-
 
 def view_logs() -> None:
     if not os.path.exists(LOG_FILE):
@@ -87,7 +71,6 @@ def view_logs() -> None:
     logs = pd.read_csv(LOG_FILE)
     print(logs.to_string(index=False))
     print("\n(That's all of them so far!)\n")
-
 
 def clear_logs() -> None:
     if not os.path.exists(LOG_FILE):
