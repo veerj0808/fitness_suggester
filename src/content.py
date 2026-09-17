@@ -1,13 +1,3 @@
-"""
-content.py — Static reference content used by the recommender.
-
-Keeping this text separate from the program logic (data-manager,
-health-metrics, CLI) makes the project easier to navigate and lets
-you extend the plans/tips without touching any actual logic.
-"""
-
-# Maps a user-typed goal string to the numeric code the ML model
-# was trained on.
 GOAL_MAP = {
     'weight loss': 0,
     'muscle gain': 1,
