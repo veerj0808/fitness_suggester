@@ -48,7 +48,6 @@ def ask_for_gender() -> str:
         print("Please type 'male' or 'female'.")
 
 def get_user_profile():
-    #Collect age, weight, height (metres), gender, and goal from the user.
     age = ask_for_age()
     weight = ask_for_weight()
     height_m = ask_for_height()
