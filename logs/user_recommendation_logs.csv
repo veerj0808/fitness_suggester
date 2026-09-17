@@ -1,0 +1,5 @@
+Age,Weight_kg,Height_m,BMI,Gender,Goal,Recommended_Workout,Diet_Focus
+19,70.0,1.7,24.2,Male,Muscle Gain,Cardio,Surplus
+40,80.0,1.7,27.7,Male,Weight Loss,Weightlifting,Deficit
+20,100.0,1.8,30.9,Male,Weight Loss,Weightlifting,Deficit
+21,110.0,1.55,45.8,Female,Muscle Gain,Weightlifting,Surplus
