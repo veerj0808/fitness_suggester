@@ -136,7 +136,7 @@ pytest tests/
 
 ---
 
-## Sample Session (Screenshot)
+## OUTPUT
 
 ![Sample terminal session](docs/Output.png)
 ---
