@@ -61,7 +61,6 @@ DIET_PLANS = {
     """,
 }
 
-# One short tip per workout type, per gender, shown at the end of the plan.
 GENDER_WORKOUT_TIPS = {
     'male': {
         'Cardio': 'Focus on maintaining a strong pace. Track your heart rate to stay in the fat-burn zone (60-70% max HR).',
