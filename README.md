@@ -71,23 +71,6 @@ and evaluation).
    with a clear message rather than raw stack traces.
 
 ---
-
-## System Design
-
-Diagrams below are also available as source `.mmd` (Mermaid) files in
-[`docs/diagrams/`](docs/diagrams/), and are reproduced in full in the
-[project report](docs/Project_report.pdf).
-
-**System Architecture**
-
-![System architecture](docs/diagrams/architecture.png)
-
-**Process Flow**
-
-![Process flow](docs/diagrams/workflow.png)
-
----
-
 ## Project Structure
 
 ```
