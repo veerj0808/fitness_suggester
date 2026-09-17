@@ -138,7 +138,7 @@ pytest tests/
 
 ## Sample Session (Screenshot)
 
-![Sample terminal session](docs/output.png)
+![Sample terminal session](docs/Output.png)
 ---
 
 ## Limitations
