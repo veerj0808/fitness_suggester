@@ -1,7 +1,6 @@
 from src.content import BMI_NOTES
 
 def calculate_bmi(weight_kg: float, height_m: float) -> float:
-    #Standard BMI formula: weight (kg) / height (m)^2.
     return round(weight_kg / (height_m ** 2), 1)
 
 def get_bmi_category(bmi: float) -> str:
@@ -22,7 +21,6 @@ def show_bmi(weight_kg: float, height_m: float) -> None:
     print(f"  Note: {BMI_NOTES[category]}")
 
 def calculate_water_intake(weight_kg: float) -> float:
-    #Rough daily water-intake guideline: 35 ml per kg of body weight.
     return round((weight_kg * 35) / 1000, 1)
 
 def show_water_intake(weight_kg: float) -> None:
@@ -36,10 +34,10 @@ def calculate_tdee(age: int, weight_kg: float, height_m: float, goal: str, gende
     tdee = round(bmr * 1.55)
 
     if goal == 'weight loss':
-        target = tdee - 500  # ~0.5 kg loss per week
+        target = tdee - 500 
         label = "Caloric Deficit Target"
     else:
-        target = tdee + 300  # lean bulk
+        target = tdee + 300 
         label = "Caloric Surplus Target"
 
     return tdee, target, label
