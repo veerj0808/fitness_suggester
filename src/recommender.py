@@ -1,12 +1,8 @@
-"""
-recommender.py — formats and prints the workout + diet recommendation.
-"""
-
+#recommender.py — formats and prints the workout + diet recommendation
 from src.content import WORKOUT_ROUTINES, DIET_PLANS, GENDER_WORKOUT_TIPS
 
-
 def show_recommendation(prediction: str, goal: str, gender: str) -> None:
-    """Print the recommended workout and diet plan in a readable format."""
+    #Print the recommended workout and diet plan in a readable format.
     print("\n Crunching the numbers... Here's what we recommend for you!")
 
     print(f"\n Your Recommended Workout Style: {prediction}")
