@@ -5,7 +5,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.health_metrics import calculate_bmi, get_bmi_category, calculate_water_intake, calculate_tdee
 
 def test_calculate_bmi():
-    # 70 kg at 1.75 m -> 70 / (1.75**2) = 22.9
     assert calculate_bmi(70, 1.75) == 22.9
 
 def test_bmi_category_boundaries():
@@ -17,7 +16,6 @@ def test_bmi_category_boundaries():
     assert get_bmi_category(30.0) == "Obese"
 
 def test_water_intake():
-    # 80 kg * 35 ml/kg = 2800 ml = 2.8 L
     assert calculate_water_intake(80) == 2.8
 
 def test_tdee_weight_loss_is_lower_than_maintenance():
