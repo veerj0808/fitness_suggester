@@ -1,26 +1,12 @@
-#!/usr/bin/env python3
-"""
-main.py — AI Fitness & Diet Suggester (entry point).
-
-Run with:
-    python3 main.py
-
-See README.md for setup instructions and a full project description.
-"""
-
 import pandas as pd
 import warnings
-
 from src.content import GOAL_MAP
 from src.data_manager import initialize_dataset, train_model, log_recommendation, view_logs, clear_logs
 from src.health_metrics import calculate_bmi, show_bmi, show_water_intake, show_calorie_estimate
 from src.input_helpers import get_user_profile
 from src.recommender import show_recommendation
 
-# scikit-learn's KNeighborsClassifier warns about feature names on some
-# versions when given a plain-shaped DataFrame; harmless here, so silence it.
 warnings.filterwarnings("ignore")
-
 
 def run_recommendation_flow(model) -> None:
     print("\nGreat! Let's learn a little about you first.\n")
