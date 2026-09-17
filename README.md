@@ -139,35 +139,6 @@ pytest tests/
 ## Sample Session (Screenshot)
 
 ![Sample terminal session](docs/screenshot.png)
-
----
-
-## Bug Fixes Made to the Original Script
-
-The original `AI_fitness_suggestor.py` worked, but had a few issues that
-were fixed in this version:
-
-1. **No sanity range on age/weight/height.** The original only checked
-   that values were positive, so a mistyped height (e.g. `1` instead of
-   `170`) silently produced a BMI in the hundreds of thousands — this is
-   visible in the shipped `user_recommendation_logs.csv` (a row with
-   `Height_m = 0.01`, `BMI = 870000.0`). Each prompt now enforces a
-   realistic real-world range (age 1–120, weight 20–300 kg, height
-   50–250 cm) and re-prompts otherwise.
-2. **Hardcoded relative file paths.** `fitness_dataset.csv` and
-   `user_recommendation_logs.csv` were bare filenames, so the script only
-   worked if you happened to `cd` into the exact folder holding them.
-   Paths are now built from the project root, so `python3 main.py` works
-   from anywhere, and data/logs live in their own `data/` and `logs/`
-   folders instead of mixed in with the source code.
-3. **No graceful exit on Ctrl+C / closed input.** The menu loop now
-   catches `KeyboardInterrupt`/`EOFError` and exits cleanly instead of
-   crashing with a traceback.
-4. **Single 394-line script.** Split into focused modules (see Project
-   Structure above) so each piece — data/content, calculations, input
-   validation, ML training/logging, CLI flow — can be read, tested, and
-   modified independently.
-
 ---
 
 ## Limitations
